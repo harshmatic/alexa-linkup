@@ -1,0 +1,67 @@
+LeaveToday if {FirstName} is on leave today
+LeaveToday if {FirstName} on leave
+LeaveToday if {FirstName} is on leave
+LeaveToday if {FirstName} in office today
+LeaveToday if {FirstName} in the office today
+LeaveToday is {FirstName} is on leave today
+LeaveToday is {FirstName} on leave
+LeaveToday is {FirstName} is on leave
+LeaveToday is {FirstName} in office today
+LeaveToday is {FirstName} in the office today
+LeaveToday if {FirstName}  {LastName} is on leave today
+LeaveToday if {FirstName}  {LastName} on leave
+LeaveToday if {FirstName}  {LastName} is on leave
+LeaveToday if {FirstName}  {LastName} in office today
+LeaveToday if {FirstName}  {LastName} in the office today
+LeaveToday is {FirstName} {LastName}  is on leave today
+LeaveToday is {FirstName} {LastName}  on leave
+LeaveToday is {FirstName} {LastName}  is on leave
+LeaveToday is {FirstName} {LastName} in office today
+LeaveToday is {FirstName} {LastName} in the office today
+LeaveOn if {FirstName} on leave {TimeDate}
+LeaveOn if {FirstName} is on leave {TimeDate}
+LeaveOn is {FirstName} on leave {TimeDate}
+LeaveOn if {FirstName} {LastName} on leave {TimeDate}
+LeaveOn if {FirstName} {LastName} is on leave {TimeDate}
+LeaveOn is {FirstName} {LastName} on leave {TimeDate}
+LeavePlans for the leave plans of {FirstName} for {TimeDate}
+LeavePlans for the leave plans of {FirstName} for {TimeDate}
+LeavePlans what is the leave plans of {FirstName} for {TimeDate}
+LeavePlans for the leave plan of {FirstName} for {TimeDate}
+LeavePlans for the leave plan of {FirstName} for {TimeDate}
+LeavePlans what is the leave plan of {FirstName} for {TimeDate}
+LeavePlans for the leave plans of {FirstName} {LastName} for {TimeDate}
+LeavePlans for the leave plans of {FirstName} {LastName} for {TimeDate}
+LeavePlans what is the leave plans of {FirstName} {LastName} for {TimeDate}
+LeavePlans for the leave plan of {FirstName} {LastName} for {TimeDate}
+LeavePlans for the leave plan of {FirstName} {LastName} for {TimeDate}
+LeavePlans what is the leave plan of {FirstName} {LastName} for {TimeDate}
+ContactInfo for contact number of {FirstName}
+ContactInfo for contact number of {FirstName} {LastName}
+ContactInfo for email of {FirstName}
+ContactInfo for email of {FirstName} {LastName}
+SendEmail {Yes|MailSend}
+RewardPoints What are {FirstName} reward points
+RewardPoints What are {FirstName} {LastName} reward points
+RewardPoints how much reward points {FirstName} have 
+RewardPoints how much reward points {FirstName} {LastName} have 
+RewardPoints how much reward points {FirstName} have 
+RewardPoints how much reward points {FirstName} {LastName} have
+TopEarner Who has the highest reward points
+TopEarner Who is the top earner
+TopEarner for top {TopNumber} reward point earners
+TopEarner for top {TopNumber} point earners
+TopEarner for top {TopNumber} earners
+TopEarner for the top {TopNumber} reward point earners
+TopEarner for the top {TopNumber} point earners
+TopEarner for the top {TopNumber} earners
+Goodies what goodies are available for {StartNumber} points
+Goodies if there are goodies for {StartNumber} points
+Goodies what goodies are for {StartNumber} points
+Goodies what goodies are available from {StartNumber} to {EndNumber} points
+Goodies if there are goodies from {StartNumber} to {EndNumber} points
+Goodies what goodies are from {StartNumber} to {EndNumber} points
+Goodies what goodies are available between {StartNumber} and {EndNumber} points
+Goodies if there are goodies between {StartNumber} and {EndNumber} points
+Goodies what goodies are between {StartNumber} and {EndNumber} points
+WifeIntent how to keep wife happy

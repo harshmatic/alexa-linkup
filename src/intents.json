@@ -1,0 +1,111 @@
+{
+    "intents": [
+      {
+        "slots": [
+          {
+            "name": "FirstName",
+            "type": "FirstName"
+          },
+          {
+            "name": "LastName",
+            "type": "LastName"
+          }
+        ],
+        "intent": "LeaveToday"
+      },
+      {
+        "slots": [
+          {
+            "name": "FirstName",
+            "type": "FirstName"
+          },
+          {
+            "name": "LastName",
+            "type": "LastName"
+          },
+          {
+            "name": "TimeDate",
+            "type": "AMAZON.DATE"
+          }
+        ],
+        "intent": "LeaveOn"
+      },
+      {
+        "slots": [
+          {
+            "name": "FirstName",
+            "type": "FirstName"
+          },
+          {
+            "name": "LastName",
+            "type": "LastName"
+          },
+          {
+            "name": "TimeDate",
+            "type": "AMAZON.DATE"
+          }
+        ],
+        "intent": "LeavePlans"
+      },
+      {
+        "intent": "WifeIntent"
+      },
+      {
+        "slots": [
+            {
+              "name": "FirstName",
+              "type": "FirstName"
+            },
+            {
+              "name": "LastName",
+              "type": "LastName"
+            }
+          ],
+        "intent": "ContactInfo"
+      },
+      {
+        "slots": [
+            {
+              "name": "MailSend",
+              "type": "LITERAL"
+            }
+          ],
+        "intent": "SendEmail"
+      },
+      {
+        "slots": [
+            {
+              "name": "FirstName",
+              "type": "FirstName"
+            },
+            {
+                "name": "LastName",
+                "type": "LastName"
+              }
+          ],
+        "intent": "RewardPoints"
+      },
+      {
+        "slots": [
+            {
+              "name": "TopNumber",
+              "type": "AMAZON.NUMBER"
+            }
+          ],
+        "intent": "TopEarner"
+      },
+      {
+        "slots": [
+            {
+              "name": "StartNumber",
+              "type": "AMAZON.NUMBER"
+            },
+            {
+                "name": "EndNumber",
+                "type": "AMAZON.NUMBER"
+              }
+          ],
+        "intent": "Goodies"
+      }
+    ]
+  }

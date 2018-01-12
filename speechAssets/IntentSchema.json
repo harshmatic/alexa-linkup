@@ -1,0 +1,56 @@
+{
+  "intents": [
+    {
+      "intent": "NewLeadsIntent"
+    },
+    {
+      "slots": [
+        {
+          "name": "OpportunityName",
+          "type": "LITERAL"
+        }
+      ],
+      "intent": "OpportunityStatusEvent"
+    },
+    {
+      "intent": "LeadStartIntent"
+    },
+    {
+      "slots": [
+        {
+          "name": "Name",
+          "type": "LITERAL"
+        }
+      ],
+      "intent": "LeadNameIntent"
+    },
+    {
+      "slots": [
+        {
+          "name": "Company",
+          "type": "LITERAL"
+        }
+      ],
+      "intent": "LeadCompanyIntent"
+    },
+    {
+      "slots": [
+        {
+          "name": "Tenure",
+          "type": "LITERAL"
+        },
+        {
+          "name": "Name",
+          "type": "LITERAL"
+        }
+      ],
+      "intent": "ReportIntent"
+    },
+    {
+      "intent": "MyCalendarIntent"
+    },
+    {
+      "intent": "HelpIntent"
+    }
+  ]
+}
