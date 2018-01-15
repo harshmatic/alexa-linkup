@@ -59,10 +59,13 @@ Linkup.prototype.intentHandlers = {
   },
 
   TopEarner : function (intent, session, response) {
-    rewardPoints.topEarners(intent, session, response);
+    rewardPoints.topEarners(intent, session, response, requestApi);
   },
   RewardPoints : function (intent, session, response) {
-    rewardPoints.pointsOf(intent, session, response);
+    rewardPoints.pointsOf(intent, session, response,requestApi);
+  },
+  Transfer : function (intent, session, response) {
+    rewardPoints.transfer(intent, session, response,requestApi);
   },
   Goodies : function (intent, session, response) {
     rewardPoints.goodies(intent, session, response);
@@ -77,9 +80,11 @@ Linkup.prototype.intentHandlers = {
   GetSkillLevel : function (intent, session, response) {
     skillSet.getSkillLevel(intent, session, response);
   }, 
-
+  UnsubmittedTimesheet : function (intent, session, response) {
+    timesheets.unsubmitted(intent, session, response, requestApi);
+  },
   Timesheets : function (intent, session, response) {
-    timesheets.pendingTimesheets(intent, session, response);
+    timesheets.pendingTimesheets(intent, session, response, requestApi);
   },
   HelpIntent: function (intent, session, response) {
     response.ask("You can ask Linkup to check for the questions pasted above !");

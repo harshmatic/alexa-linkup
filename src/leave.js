@@ -35,20 +35,28 @@ var speechOut = '';
 function leave() {
     this.handleLeaveToday = function (intent, session, response, requestApi) {
         speechOut = '';
-        if (checkIntent(intent))
-            response.tellWithEffects('<speak>I can not understand.</speak>');
-        else {
-            if (res.isOnLeave)
-                speechOut = speechOut + 'Yes, ' + (res.gender.toLowerCase() == 'female' ? 'She ' : 'He ') + 'is on ' + res.leaveType + '.';
-            else {
-                speechOut = speechOut + 'No, ' + (res.gender.toLowerCase() == 'female' ? 'She ' : 'He ');
-                if (res.isSmoker) speechOut = speechOut + ' Must be smoking on terrace.';
-                else if (res.isPoolPlayer) speechOut = speechOut + ' Must be at the snooker table.';
-                else speechOut = speechOut + ' Must be taking nap on terrace.';
+		var url = 'Leave/';
+        //if (checkIntent(intent)){
+			if (intent.slots.Name.value.split(' ').length==2) {
+			requestApi.get(url+'/'+intent.slots.Name.value+'/'+'01-01-2018',function(res){
+				if (res) {
+					if (res.isOnLeave)
+					speechOut = speechOut + 'Yes, ' + (res.gender.toLowerCase() == 'female' ? 'She ' : 'He ') + 'is on ' + res.leaveType + '.';
+				else {
+					speechOut = speechOut + 'No, ' + (res.gender.toLowerCase() == 'female' ? 'She ' : 'He ');
+						if (res.isSmoker) speechOut = speechOut + ' Must be smoking on terrace.';
+						else if (res.isPoolPlayer) speechOut = speechOut + ' Must be at the snooker table.';
+						else speechOut = speechOut + ' Must be taking nap on terrace.';
+					}
+				} else  speechOut = speechOut+'Guess what! Linkup is not working as usual. Try again.';
+				response.tellWithEffects('<speak>' + speechOut + '</speak>');
+			});
+			
+			} else response.tellWithEffects('<speak>I want both first and last name to get you the info.</speak>');
+			//}
+		//else response.askWithEffects('<speak>Sorry I could not understand. Please repeat.</speak>','Please repeat.');
 
-            }
-        }
-        response.tellWithEffects('<speak>' + speechOut + '</speak>');
+        
     }
 
     this.handleLeaveOn = function (intent, session, response, requestApi) {

@@ -1,4 +1,4 @@
-var request = require('request');
+var request = require('./request');
 var access_token = '';
     var options = {
         baseUrl: 'http://alexa.eternussolutions.com:4500/api/Alexa',
