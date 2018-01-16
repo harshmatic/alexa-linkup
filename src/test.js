@@ -1,31 +1,58 @@
 var requestApiModule = require('./auth');
 var requestApi = new requestApiModule();
-var moment  = new require('./moment');
-var url = 'RnR';
-requestApi.get(url+'/'+'harshit jyoti',function(res){
-var speechout ='';
-				if (res) {
-					if (res.balance<30) {
-						speechout = speechout + "<say-as interpret-as='interjection'>aiyo.</say-as> You only have "+res.balance+" points. you cant't even buy a pen."
-					} else if (res.balance>30 && res.balance<2000) {
-						speechout = speechout + "<say-as interpret-as='interjection'>waaaah.</say-as> You have "+res.balance+" points. you can buy."
-						if (res.itemNames.length) {
-							res.itemNames.forEach(function(a) {
-							speechout = speechout + a.itemName +'.';
-							});
-						}
-					} else if (res.balance>2000) {
-						speechout = speechout + "<say-as interpret-as='interjection'>baap re.</say-as> You have "+res.balance+" points. you can buy."
-						if (res.itemNames.length) {
-							res.itemNames.forEach(function(a) {
-							speechout = speechout + a.itemName +'.';
-							});
-						}
-					}
-
-				} else  speechout = speechout+'Guess what! Linkup is not working as usual. Try again.';
-				console.log(speechout);
+var moment  = require('./moment');
+var StartDate = moment();
+var StartDate = moment(StartDate).format('YYYY-MM-DD');
+var getDates = require('./convertDate');
+var value = {f:''}
+var dates = '2018'.split('-');
+console.log(value.g ? '2': '1');
+var datesResponse = [];
+//     switch(dates.length) {
+//         case 3:
+//         datesResponse.push(2018-W50);
+//         datesResponse.push(2018-W50);
+//             break;
+//         case 2:
+//             if (dates[1].includes("W")) {
+//                 datesResponse.push(moment().year(dates[0]).week(dates[1].replace('W','')).format('YYYY-MM-DD'));
+//                 datesResponse.push(moment().year(dates[0]).week(dates[1].replace('W','')).add(7, 'days').format('YYYY-MM-DD'));
+//             } else {
+// 				datesResponse.push(moment([parseInt(dates[0]), parseInt(dates[1]) - 1]).format('YYYY-MM-DD'));
+//                 datesResponse.push(moment([parseInt(dates[0]), parseInt(dates[1]) - 1]).clone().endOf('month').format('YYYY-MM-DD'));
+//             }
+//             break;
+// 		case 1:
+// 			datesResponse.push(dates[0]+'-01-01');
+// 			datesResponse.push(dates[0]+'-12-31');
+//             break;
+//         default:
+//     }
+// console.log(datesResponse);
+var url = 'Leave';
+var speechOut = '';
+var dates = getDates('2018-W03');
+requestApi.get(url+'/'+'Ashwini singh/' + dates[0] + '/' + dates[1],function(res){
+	var speechOut = '';
+	if (res)
+		if (res.empLeaveDetails) {
+			speechOut = speechOut + 'Yes, ' + (res.gender.toLowerCase() == 'female' ? 'She ' : 'He ') + 'is on ';
+			res.empLeaveDetails.forEach(function (item) {
+				speechOut = speechOut + item.type +' ';
+				if (item.startDate == item.endDate)
+					speechOut = speechOut + 'for ' + ' <say-as interpret-as="date">'+item.startDate+'</say-as>.' ;
+				else 
+					speechOut = speechOut + 'from ' + ' <say-as interpret-as="date">'+item.startDate+'</say-as> to  <say-as interpret-as="date">'+item.endDate+'</say-as>.' ;
 			});
+		}
+		else {
+			speechOut = speechOut + 'No, ' + (res.gender.toLowerCase() == 'female' ? 'She ' : 'He ');
+			speechOut = speechOut + ' will be working.';
+		}
+	else speechOut = speechOut + 'Guess what! Linkup is not working as usual. Try again.';
+	console.log(speechOut);
+});
+
 
 // function auth() {
 //   request.post('http://alexa.eternussolutions.com:4500/api/Auth/Token', {

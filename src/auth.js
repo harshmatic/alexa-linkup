@@ -1,7 +1,7 @@
 var request = require('./request');
 var access_token = '';
     var options = {
-        baseUrl: 'http://alexa.eternussolutions.com:4500/api/Alexa',
+        baseUrl: 'http://alexa.eternussolutions.com:4500/api/Alexa/',
         url: '',
         method: '',
         headers: {
@@ -22,7 +22,7 @@ var auth = function(callback) {
         } else {
             access_token = body.access_token;
             options = {
-                baseUrl: 'http://alexa.eternussolutions.com:4500/api/Alexa',
+                baseUrl: 'http://alexa.eternussolutions.com:4500/api/Alexa/',
                 url: '',
                 method: '',
                 headers: {
@@ -41,15 +41,20 @@ function requestApi() {
     this.get = function (url,callback) {
         options.url = url;
         options.method = 'get';
+        
         request.get(options, function (err, res, body) {
+            
             if (err) {
                 console.log(err);
                 callback(false)
             }
             else if (res.statusCode == 200) {
+                console.log(res);
                 callback(JSON.parse(body));
             } else {
+                
                 auth(function(gotToken){
+                    
                     if (gotToken) {
                         options = {
                             baseUrl: 'http://alexa.eternussolutions.com:4500/api/Alexa/',
@@ -61,14 +66,18 @@ function requestApi() {
                         }
                         
                         request.get(options, function (err, res, body) {
+                            console.log(url);
                             if (err) {
+                                console.log(err);
                                 callback(JSON.parse(body))
                             }
                             else if (res.statusCode == 200) {
+                                console.log(body);
                                 callback(JSON.parse(body));
                             }
                         });
                     } else {
+                        console.log('asda');
                         callback(false);
                     };
                 });

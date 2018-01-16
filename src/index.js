@@ -52,7 +52,7 @@ Linkup.prototype.intentHandlers = {
   },
   
   ContactInfo : function (intent, session, response) {
-    contact.contactInfo(intent, session, response);
+    contact.contactInfo(intent, session, response, requestApi);
   },
   SendEmail : function (intent, session, response) {
     contact.sendEmail(intent, session, response);
@@ -68,17 +68,17 @@ Linkup.prototype.intentHandlers = {
     rewardPoints.transfer(intent, session, response,requestApi);
   },
   Goodies : function (intent, session, response) {
-    rewardPoints.goodies(intent, session, response);
+    rewardPoints.goodies(intent, session, response, requestApi);
   },
 
   GetPeople : function (intent, session, response) {
-    skillSet.getPeople(intent, session, response);
+    skillSet.getPeople(intent, session, response, requestApi);
   },
   GetSkill : function (intent, session, response) {
-    skillSet.getSkill(intent, session, response);
+    skillSet.getSkill(intent, session, response, requestApi);
   },
   GetSkillLevel : function (intent, session, response) {
-    skillSet.getSkillLevel(intent, session, response);
+    skillSet.getSkillLevel(intent, session, response, requestApi);
   }, 
   UnsubmittedTimesheet : function (intent, session, response) {
     timesheets.unsubmitted(intent, session, response, requestApi);
